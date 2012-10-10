@@ -1,0 +1,16 @@
+@(pictures: List[String])
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test Viewing Pictures</title>
+</head>
+<body>
+       <a href="@routes.Application.upload()">Upload new Photo</a>
+       <div class="pictures">
+           @for(pic <- pictures){
+               <a href="@routes.Application.getImage(pic)"><img src="@routes.Application.getImage(pic)" height="200px" width="200px" style="display: inline;"/></a>
+               <a href="@routes.Application.removePicture(pic)">Delete</a>
+           }
+       </div>
+</body>
+</html>
